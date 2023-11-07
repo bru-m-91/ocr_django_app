@@ -1,0 +1,41 @@
+# Django Generic
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.swp
+
+# Environments 
+.env 
+.venv 
+env/ 
+venv/ 
+ENV/ 
+env.bak/ 
+venv.bak/ 
+
+# Ignore database configuration files
+*.sqlite
+
+# Local settings file
+settings_local.py
+
+# Sensitive or secret files
+secret_key.txt
+*.env
+
+# Ignore development and backup files
+*.bak
+*.backup
+*.swp
+*.swo
+
+# IDE and editor-specific files
+.vscode/
+
+# System-specific files and directories
+.DS_Store
+Thumbs.db

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="d-flex align-items-center justify-content-center vh-50 mt-5">
+    <form method="post" enctype="multipart/form-data" class="flex justify-center">
+    <div class="shadow p-4">
+        <input class="form-control form-control-lg" name="imagefile" re accept="image/*" id="formFileLg" type="file" required>
+        {% csrf_token %}
+        <div class="d-grid gap-2 col-6 mx-auto mt-3">
+            <button class="btn btn-outline-success" type="submit">Scan</button>
+        </div>
+    </div>
+</div>
+
+<!-- Uploaded image display -->
+{% if org_imag %}
+<div class="d-flex align-items-center justify-content-center vh-80 mt-3">
+    <div class="shadow p-4">
+        <img src="data:image/png;base64, {{ org_imag }}" width=500>
+    </div>
+</div>
+{% endif %}
+
+<!-- OCR text display -->
+{% if results %}
+<div class="d-flex align-items-center justify-content-center vh-90 mt-3" width=400>
+    <div class="shadow p-4">
+        {% if ocr_text %}
+            {% for line in ocr_text %}
+                <p> {{ line }}</p>
+            {% endfor %}
+        
+        {% else %}
+        <p>Looks like we could not identify any text in this iamge.</p>
+        {% endif %}
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}
