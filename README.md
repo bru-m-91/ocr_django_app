@@ -1,6 +1,6 @@
 # OCR Django App
 
-<img src="previews/demo.gif?raw=true" height="500"/>
+<img src="previews/demo.gif" height="400"/>
 
 <br/>
 
