@@ -21,7 +21,7 @@ def index(request):
             return render(request, "home.html")
 
         text = pytesseract.image_to_string(Image.open(image))
-        print(f'text: {text}')
+        # print(f'text: {text}')
         if text:
             text = text.split('\n')
         else:
